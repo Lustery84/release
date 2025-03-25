@@ -1,1 +1,27 @@
+câu hỏi phần 9 
+Accessor methods (getters) nên được dùng khi cần hiển thị thông tin của đối tượng ra bên ngoài
+câu hỏi phần 10
+Không, Java sẽ không cho phép nếu bạn tạo 2 constructor như sau:
+public DigitalVideoDisc(String title) { ... }  // Constructor 1
+public DigitalVideoDisc(String category) { ... }  // Constructor 2
+Giải thích
+Nguyên tắc nạp chồng constructor:
 
+Java phân biệt các constructor qua số lượng và kiểu tham số
+
+Không phân biệt qua tên tham số
+
+Vấn đề
+
+Cả 2 constructor đều có cùng kiểu tham số (String)
+
+Khi gọi new DigitalVideoDisc("Animation"), Java không thể xác định bạn muốn dùng constructor nào (gán cho title hay category)
+
+câu hỏi phần 15
+Java luôn là Pass by Value (truyền bằng giá trị), ngay cả khi truyền đối tượng.
+
+Giải thích chi tiết
+1. Định nghĩa
+Khái niệm	 |   Pass by Value	                                     | Pass by Reference
+Bản chất	 |   Truyền bản sao của giá trị	                         | Truyền địa chỉ/trỏ trực tiếp đến vùng nhớ gốc
+Ảnh hưởng	 |   Thay đổi trong phương thức không ảnh hưởng biến gốc | Thay đổi trong phương thức ảnh hưởng trực tiếp đến biến gốc

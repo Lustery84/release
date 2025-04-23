@@ -1,0 +1,34 @@
+Q: Which classes are aggregates of other classes?
+Cart là aggregate của Media (Book, CompactDisc, DigitalVideoDisc)
+Store là aggregate của Media
+CompactDisc là aggregate của Track
+
+When overriding the equals() method of the Object class, you will have to cast the Object 
+parameter obj to the type of Object that you are dealing with. For example, in the Media class, you must cast the Object obj to a Media, and then check the equality of the two objects’ attributes as the above requirements (i.e. title for Media; title and length for Track). If the passing object is not an instance of Media, what happens?
+Runtime error
+
+Q: Alternatively, to compare items in the cart, instead of using the Comparator class I have mentioned, you can use the Comparable interface1 and override the compareTo()method. You can refer to the Java docs to see the information of this interface.
+Suppose we are taking this Comparable interface approach.
+What class should implement the Comparable interface?
+
+Should implement the Comparable interface in class Media
+
+In those classes, how should you implement the compareTo()method to reflect the ordering that we want?
+
+Implement compareTo() method be to reflect the ordering that we want
+public int compareTo(Media media) {   
+	return Comparator.comparing(Media::getCost).thenComparing(Media::getTitle).compare(this, media); 
+}
+Implement compareTo() method be to reflect the ordering that we want in DigitalVideoDisc
+public int compareTo(Media media) {   
+	DigitalVideoDisc dvd =(DigitalVideoDisc) media;   
+	return Comparator.comparing(DigitalVideoDisc::getTitle).thenComparing(DigitalVideoDisc::getLength).thenComparing(DigitalVideoDisc::getCost).compare(this, dvd); 
+}
+
+Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+
+No
+
+Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+
+We can either override compareTo() in DigitalVideoDisc or define a custom Comparator for DVDs

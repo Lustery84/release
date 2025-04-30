@@ -1,0 +1,5 @@
+Make comparisons between AWT and Swing:
+
+-> So sánh
+AWT kế thừa từ Frame, cách thành phần phụ thuộc hệ điều hành, container chính là Frame, GUI là Label, TextField, Layout quản lý là GridLayout(2,2), xử lý event bằng ActionListener cho TextField, giao diện đơn giản và cũ hơn, khả năng mở rộng bị hạn chế, ít thành phần GUI và tính tương tích hệ điều hành bị phụ thuộc nền tảng
+Swing kế thừa từ JFrame, các thành phần được vẽ bởi Java, container chính là JFrame và thêm ContentPane để quản lý các component, GUI là JLabel, JTextField,layout quản lý và event handling giống AWT, giao diện hiện đại, đồng nhất nhiều hệ điều hành, khả năng mở rộng phong phú: thêm nhiều thành phần như JButton, JTable, JTree...

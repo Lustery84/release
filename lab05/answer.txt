@@ -1,0 +1,15 @@
+1. Hậu quả khi không bắt PlayerException:
+
+Nếu không bắt hoặc khai báo throws PlayerException (một checked exception) khi gọi các phương thức play(), chương trình sẽ gặp lỗi biên dịch (compilation error). Trình biên dịch Java yêu cầu xử lý tường minh các checked exception.
+
+2. Thông tin từ getMessage(), toString(), printStackTrace() và lợi ích của dialog lỗi:
+
+getMessage(): Cung cấp chuỗi thông báo lỗi cụ thể.
+toString(): Trả về tên lớp exception và thông báo lỗi từ getMessage().
+printStackTrace(): In ra dấu vết ngăn xếp (stack trace), chi tiết quá trình gọi hàm dẫn đến lỗi, giúp lập trình viên gỡ lỗi.
+Hiển thị lỗi qua dialog giúp thông báo cho người dùng về sự cố một cách rõ ràng và có thể cung cấp thông tin cơ bản để họ báo cáo lỗi.
+
+3. Lợi ích của ủy thác ngoại lệ trong constructor:
+
+Ủy thác ngoại lệ trong constructor (bằng cách khai báo throws) giúp ngăn chặn việc tạo ra các đối tượng không hợp lệ hoặc ở trạng thái không hoàn chỉnh. Nếu có lỗi trong quá trình khởi tạo, ngoại lệ được ném ra, và đối tượng sẽ không được tạo, đảm bảo tính toàn vẹn của dữ liệu. 
+
